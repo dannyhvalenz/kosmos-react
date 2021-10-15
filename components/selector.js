@@ -24,7 +24,7 @@ function Selector({setSelected, selected, setReload}) {
                     <input
                         type="checkbox"
                         value="nombre"
-                        class="checked:bg-blue-600 checked:border-transparent"
+                        className="checked:bg-blue-600 checked:border-transparent"
                         onClick={handleChange}
                     />{" "}
                     Nombre Completo
@@ -33,7 +33,7 @@ function Selector({setSelected, selected, setReload}) {
                     <input
                         type="checkbox"
                         value="edad"
-                        class="checked:bg-blue-600 checked:border-transparent"
+                        className="checked:bg-blue-600 checked:border-transparent"
                         onClick={handleChange}
                     />{" "}
                     Edad
@@ -42,7 +42,7 @@ function Selector({setSelected, selected, setReload}) {
                     <input
                         type="checkbox"
                         value="genero"
-                        class="checked:bg-blue-600 checked:border-transparent"
+                        className="checked:bg-blue-600 checked:border-transparent"
                         onClick={handleChange}
                     />{" "}
                     Género
@@ -51,7 +51,7 @@ function Selector({setSelected, selected, setReload}) {
                     <input
                         type="checkbox"
                         value="tipoTrabajo"
-                        class="checked:bg-blue-600 checked:border-transparent"
+                        className="checked:bg-blue-600 checked:border-transparent"
                         onClick={handleChange}
                     />{" "}
                     Tipo de Trabajo
@@ -60,7 +60,7 @@ function Selector({setSelected, selected, setReload}) {
                     <input
                         type="checkbox"
                         value="telefono"
-                        class="checked:bg-blue-600 checked:border-transparent"
+                        className="checked:bg-blue-600 checked:border-transparent"
                         onClick={handleChange}
                     />{" "}
                     Teléfono
@@ -69,7 +69,7 @@ function Selector({setSelected, selected, setReload}) {
                     <input
                         type="checkbox"
                         value="email"
-                        class="checked:bg-blue-600 checked:border-transparent"
+                        className="checked:bg-blue-600 checked:border-transparent"
                         onClick={handleChange}
                     />{" "}
                     Email

@@ -1,67 +1,17 @@
 import { useFormik } from "formik";
-import React, { useState, useEffect } from "react";
-import * as yup from "yup";
+import React from "react";
 function Form({setJsonString, selected}) {
-    const [inputs, setInputs] = useState([
-        {
-            name: "nombre", checked: false
-        },
-        {
-            name: "edad", checked: false
-        },
-        {
-            name: "genero", checked: false
-        },
-        {
-            name: "tipoTrabajo", checked: false
-        },
-        {
-            name: "telefono", checked: false
-        },
-        {
-            name: "email", checked: false
-        }
     
-    ])
     const gender = [
         { name: "Hombre", value: "hombre" },
         { name: "Mujer", value: "mujer" },
     ];
     const formik = useFormik({
         initialValues: initialValues(),
-        // validationSchema: yup.object(validationSchema()),
         onSubmit: (formData) => {
-            console.log(formData)
-            let data = ""
-            if (formData.name){
-
-            }
             setJsonString(formData)
         },
     });
-
-    useEffect(() => {
-        let newInputs = [{
-            name: "nombre", checked: selected.includes("nombre") ? true : false
-        },
-        {
-            name: "edad", checked: selected.includes("edad") ? true : false
-        },
-        {
-            name: "genero", checked: selected.includes("genero") ? true : false
-        },
-        {
-            name: "tipoTrabajo", checked: selected.includes("tipoTrabajo") ? true : false
-        },
-        {
-            name: "telefono", checked: selected.includes("telefono") ? true : false
-        },
-        {
-            name: "email", checked: selected.includes("email") ? true : false
-        }]
-        setInputs(newInputs)
-        //console.log(inputs)
-    }, [selected])
     return (
         <div id="showInputs" className="h-full bg-gray-100 m-3">
             <h2 className="text-center font-bold text-3xl">Formulario</h2>
@@ -118,40 +68,40 @@ function Form({setJsonString, selected}) {
                 </div>
                 <div className={`${selected.includes("tipoTrabajo") ? "flex flex-col" : "hidden" }`}>
                     <p className="font-bold mb-2">Tipo de Trabajo</p>
-                    <div class="block">
-                        <div class="mt-2">
+                    <div className="block">
+                        <div className="mt-2">
                             <div>
-                                <label class="inline-flex items-center">
+                                <label className="inline-flex items-center">
                                     <input
                                         type="radio"
-                                        class="form-radio"
+                                        className="form-radio"
                                         name="tipoTrabajo"
                                         value="tiempoCompleto"
                                         checked
                                     />
-                                    <span class="ml-2">Tiempo completo</span>
+                                    <span className="ml-2">Tiempo completo</span>
                                 </label>
                             </div>
                             <div>
-                                <label class="inline-flex items-center">
+                                <label className="inline-flex items-center">
                                     <input
                                         type="radio"
-                                        class="form-radio"
+                                        className="form-radio"
                                         name="tipoTrabajo"
                                         value="contrato"
                                     />
-                                    <span class="ml-2">Contrato</span>
+                                    <span className="ml-2">Contrato</span>
                                 </label>
                             </div>
                             <div>
-                                <label class="inline-flex items-center">
+                                <label className="inline-flex items-center">
                                     <input
                                         type="radio"
-                                        class="form-radio"
+                                        className="form-radio"
                                         name="tipoTrabajo"
                                         value="medioTiempo"
                                     />
-                                    <span class="ml-2">Medio Tiempo</span>
+                                    <span className="ml-2">Medio Tiempo</span>
                                 </label>
                             </div>
                         </div>
@@ -179,7 +129,7 @@ function Form({setJsonString, selected}) {
                         className="inputSettings"
                     />
                 </div>
-                <button className="w-full px-5 py-3 font-bold text-white bg-blue-600 hover:bg-blue-700 transform duration-150 ease-in">Enviar</button>
+                <button type="submit" className="w-full px-5 py-3 font-bold text-white bg-blue-600 hover:bg-blue-700 transform duration-150 ease-in">Enviar</button>
             </form> :
             <p className="text-center text-red-800">Selecciona al menos un input</p>}
             

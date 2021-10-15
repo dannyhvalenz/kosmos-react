@@ -1,0 +1,38 @@
+[
+    {
+        "component": "input",
+        "label": "Nombre",
+        "type": "text",
+        "_uid": "1"
+    },
+    {
+        "component": "input",
+        "label": "Edad",
+        "type": "number",
+        "_uid": "2"
+    },
+    {
+        "component": "input",
+        "label": "Género",
+        "type": "select",
+        "_uid": "3"
+    },
+    {
+        "component": "text",
+        "label": "Tipo de Trabajo",
+        "type": "radio",
+        "_uid": "4"
+    },
+    {
+        "component": "input",
+        "label": "Telefono",
+        "type": "number",
+        "_uid": "5"
+    },
+    {
+        "component": "input",
+        "label": "Email",
+        "type": "email",
+        "_uid": "6"
+    }
+]
