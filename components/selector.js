@@ -1,8 +1,7 @@
 import React from "react";
 
-function Selector({setSelected, selected}) {
+function Selector({setSelected, selected, setReload}) {
     const handleChange = (e) => {
-        console.log(e.target.value)
         let newSelected = selected
         if (newSelected.includes(e.target.value)){
             let index = newSelected.indexOf(e.target.value);
@@ -13,11 +12,10 @@ function Selector({setSelected, selected}) {
             newSelected.push(e.target.value)
         }
         setSelected(newSelected)
-        
-
+        setReload(true);
     }
     return (
-        <div id="selectInputs" className="h-full bg-gray-500 m-3">
+        <div id="selectInputs" className="h-full bg-gray-100 m-3">
             <h2 className="text-center font-bold text-xl mt-3">
                 Selecciona los campos que deseas añadir al formulario
             </h2>
