@@ -6,12 +6,21 @@ export default function Home() {
     const [selected, setSelected] = useState([])
     const [jsonString, setJsonString] = useState(null)
     const [reload, setReload] = useState(false);
+    const [isIE, setIsIE] = useState(false);
+
+    useEffect(() => {
+        setIsIE(/MSIE|Trident/.test(window.navigator.userAgent));
+        return () => {};
+      }, []);
 
     useEffect(() => {
       setReload(false);
-  }, [reload]);
+    }, [reload]);
+
+  
     return (
         <div className="w-screen h-screen">
+            <div>Hello {isIE ? "IE" : "Modern Browsers"}!</div>;
             <h1 className="font-bold text-7xl text-center pt-5">Kosmos</h1>
             <p className="text-center font-light">
                 Daniela Hernández Valenzuela
