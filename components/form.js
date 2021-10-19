@@ -1,7 +1,14 @@
+import classNames from "classnames";
 import { useFormik } from "formik";
 import React from "react";
 function Form({setJsonString, selected}) {
-    
+    const [isIE, setIsIE] = useState(false);
+
+    useEffect(() => {
+        setIsIE(/MSIE|Trident/.test(window.navigator.userAgent));
+        return () => {};
+      }, []);
+
     const gender = [
         { name: "Hombre", value: "hombre" },
         { name: "Mujer", value: "mujer" },
@@ -13,12 +20,12 @@ function Form({setJsonString, selected}) {
         },
     });
     return (
-        <div id="showInputs" className="h-full bg-gray-100 m-3">
-            <h2 className="text-center font-bold text-3xl">Formulario</h2>
+        <div id="showInputs" className={classNames(isIE ? "ie-div-showInputs" : "h-full bg-blue-600 m-3")}>
+            <h2 className={classNames(isIE ? "" : "text-center font-bold text-3xl")}>Formulario</h2>
             {selected.length > 0 ? <form
                 id="initialSearch"
                 onSubmit={formik.handleSubmit}
-                className="mx-5 gap-4 grid grid-cols-1"
+                className={classNames(isIE ? "" : "mx-5 gap-4 grid grid-cols-1")}
             >
                 <div className={`${selected.includes("nombre") ? "flex flex-col" : "hidden" }`}>
                     <p className="font-bold mb-2">Nombre</p>
