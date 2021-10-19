@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import { useFormik } from "formik";
-import React from "react";
+import React, {useState, useEffect} from "react";
 function Form({setJsonString, selected}) {
     const [isIE, setIsIE] = useState(false);
 
