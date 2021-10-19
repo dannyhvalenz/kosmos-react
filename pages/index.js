@@ -20,7 +20,11 @@ export default function Home() {
   
     return (
         <div className="w-screen h-screen">
-            <div>Hello {isIE ? "IE" : "Modern Browsers"}!</div>;
+            <div>Hello {isIE ? "IE" : "Modern Browsers"}!</div>
+            <Head>
+                {isIE && <link href="/styles/ie.css" rel="stylesheet" type="text/css"/>}
+                {isIE && <link href="/styles/tailwind.css" rel="stylesheet" type="text/css"/>}
+            </Head>
             <h1 className="font-bold text-7xl text-center pt-5">Kosmos</h1>
             <p className="text-center font-light">
                 Daniela Hernández Valenzuela
