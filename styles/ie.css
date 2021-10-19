@@ -1,3 +1,7 @@
+.ie-columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
 .ie-div-showInputs {
     background-color: rgba(243, 0, 246);
     margin: 0.75rem;
